@@ -49,7 +49,7 @@ export default class PostList extends React.Component {
       <div> 
         <div className='header'>
           <div className="inl left">
-            <input type="text" className='beauty'/>
+            <input type="text" className='beauty' onChange={(event)=>{this.filterPosts(event.target.value)}}/>
           </div>
           <div className='inl right'>
             <select id='sort' className='beauty' onChange={(event)=>{this.sortPosts(event.target.value)}}>
@@ -77,5 +77,11 @@ export default class PostList extends React.Component {
     else{
       this.loadListOfPosts()
     }  
-  }  
+  }
+  
+  filterPosts(val){
+    const value = val.toLowerCase()
+    const filteredList = this.state.posts.filter( p => p.title.includes(value));
+    this.setState({posts: filteredList })
+  }
 }
