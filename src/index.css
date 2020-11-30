@@ -23,7 +23,6 @@ code {
 }
 .inl{
   display: inline;
-  border: 2px solid black;
   width: 20%;
   height: 40px;
 }
@@ -32,4 +31,11 @@ code {
 }
 .right{
   float: right;
+}
+.beauty{
+  width: 80%;
+  height: 30px;
+  border: 2px solid black;
+  background-color: white;
+  padding: 2px;
 }
