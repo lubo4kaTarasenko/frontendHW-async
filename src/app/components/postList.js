@@ -39,7 +39,7 @@ export default class PostList extends React.Component {
                 <div className='post_cont'>
                   <div className='post_title left'><b> {post.title}</b></div> 
                   <div className='post_title right'>
-                    <button className='delete'>&#10060;</button></div> 
+                    <button className='delete' onClick={()=>{this.deletePost(post.id)}}>&#10060;</button></div> 
                 </div>
                 <p>{post.body}</p>
               </div>           
@@ -87,5 +87,10 @@ export default class PostList extends React.Component {
     const value = val.toLowerCase()
     const filteredList = this.state.posts.filter( p => p.title.includes(value));
     this.setState({posts: filteredList })
+  }
+
+  deletePost(postRmId){
+    const newList = this.state.posts.filter(p => p.id !== postRmId)
+    this.setState({posts: newList }) 
   }
 }
