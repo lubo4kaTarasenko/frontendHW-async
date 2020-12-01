@@ -36,7 +36,11 @@ export default class PostList extends React.Component {
           <div id='posts'>
             { posts.map(post =>                
               <div key={post.id} className="post">
-                <p><b> {post.title}</b> </p>
+                <div className='post_cont'>
+                  <div className='post_title left'><b> {post.title}</b></div> 
+                  <div className='post_title right'>
+                    <button className='delete'>&#10060;</button></div> 
+                </div>
                 <p>{post.body}</p>
               </div>           
             )}
