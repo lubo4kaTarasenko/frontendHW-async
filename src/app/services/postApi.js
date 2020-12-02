@@ -1,4 +1,3 @@
-
 export default class PostApi{
     
     getList(){
@@ -7,4 +6,10 @@ export default class PostApi{
       )
     }
 
+    deleteItem(id){
+      return (fetch(`https://jsonplaceholder.typicode.com/posts/${id}`,{
+        method: "DELETE"})
+      .then(response => response.json())
+      )
+    }
 }

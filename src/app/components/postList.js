@@ -92,5 +92,12 @@ export default class PostList extends React.Component {
   deletePost(postRmId){
     const newList = this.state.posts.filter(p => p.id !== postRmId)
     this.setState({posts: newList }) 
+    new PostApi().deleteItem(postRmId).then(response => {
+      alert('delete success')
+    }).catch((error) => {
+      console.error(error);
+      alert('Something went wrong')
+      this. loadListOfPosts()
+    });
   }
 }
